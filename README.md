@@ -1,4 +1,4 @@
-# Video Man
+# Video Manager
 
 A Chrome extension for saving and organizing YouTube videos into named lists.
 
