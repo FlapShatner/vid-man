@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>My Video List</title>
+        <title>VidMan</title>
         <link rel="stylesheet" href="list.css" />
     </head>
     <body>
@@ -16,23 +16,11 @@
                     </div>
                     <div class="header__right">
                         <span id="video-count" class="header__count"></span>
-                        <div
-                            class="view-toggle"
-                            role="group"
-                            aria-label="View mode"
-                        >
-                            <button
-                                id="btn-list-view"
-                                class="view-btn"
-                                title="List view"
-                            >
+                        <div class="view-toggle" role="group" aria-label="View mode">
+                            <button id="btn-list-view" class="view-btn" title="List view">
                                 &#9776; List
                             </button>
-                            <button
-                                id="btn-grid-view"
-                                class="view-btn"
-                                title="Grid view"
-                            >
+                            <button id="btn-grid-view" class="view-btn" title="Grid view">
                                 &#8862; Grid
                             </button>
                         </div>
@@ -40,23 +28,57 @@
                 </div>
             </header>
 
-            <main class="main">
-                <div id="empty-state" class="empty-state hidden">
-                    <p class="empty-state__icon">&#128250;</p>
-                    <p class="empty-state__text">No videos saved yet.</p>
-                    <p class="empty-state__sub">
-                        Browse YouTube and click
-                        <strong>+ Add to List</strong> on any thumbnail.
-                    </p>
-                </div>
+            <div class="body">
+                <aside class="sidebar">
+                    <nav id="list-nav" class="sidebar__nav"></nav>
+                    <div class="sidebar__footer">
+                        <div id="new-list-form" class="new-list-form hidden">
+                            <input
+                                id="new-list-input"
+                                class="new-list-input"
+                                type="text"
+                                placeholder="List name"
+                                maxlength="40"
+                            />
+                            <div class="new-list-actions">
+                                <button id="new-list-confirm" class="new-list-btn new-list-btn--confirm">Create</button>
+                                <button id="new-list-cancel" class="new-list-btn new-list-btn--cancel">Cancel</button>
+                            </div>
+                        </div>
+                        <button id="btn-new-list" class="btn-new-list">+ New List</button>
+                    </div>
+                </aside>
 
-                <ul
-                    id="video-list"
-                    class="video-list"
-                    aria-label="Saved videos"
-                ></ul>
-            </main>
+                <main class="main">
+                    <div id="empty-state" class="empty-state hidden">
+                        <p class="empty-state__icon">&#128250;</p>
+                        <p class="empty-state__text">No videos saved yet.</p>
+                        <p class="empty-state__sub">
+                            Browse YouTube and click <strong>+ Add to List</strong> on any thumbnail.
+                        </p>
+                    </div>
+                    <ul id="video-list" class="video-list" aria-label="Saved videos"></ul>
+                </main>
+            </div>
         </div>
+
+        <!-- Move-to dropdown (shared, repositioned on use) -->
+        <div id="move-dropdown" class="move-dropdown hidden">
+            <p class="move-dropdown__label">Move to list</p>
+            <ul id="move-dropdown-list" class="move-dropdown__list"></ul>
+        </div>
+
+        <!-- Delete list confirmation dialog -->
+        <div id="confirm-overlay" class="confirm-overlay hidden">
+            <div class="confirm-dialog">
+                <p class="confirm-dialog__msg" id="confirm-msg"></p>
+                <div class="confirm-dialog__actions">
+                    <button id="confirm-ok" class="confirm-btn confirm-btn--danger">Delete</button>
+                    <button id="confirm-cancel" class="confirm-btn confirm-btn--cancel">Cancel</button>
+                </div>
+            </div>
+        </div>
+
         <script src="list.js"></script>
     </body>
 </html>
