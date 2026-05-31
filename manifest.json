@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "VidMan",
+  "version": "1.0",
+  "description": "Save and organize YouTube videos into a personal list.",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["*://*.youtube.com/*"],
+  "icons": {
+    "16": "vidman.png",
+    "32": "vidman.png",
+    "48": "vidman.png",
+    "128": "vidman.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Video List Manager"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

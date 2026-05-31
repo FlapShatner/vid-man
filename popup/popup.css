@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Roboto", Arial, sans-serif;
+    background: #0f0f0f;
+    color: #f1f1f1;
+    width: 240px;
+}
+
+.popup {
+    padding: 14px 16px 16px;
+    border-radius: 10px;
+}
+
+.popup__header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #272727;
+}
+
+.popup__logo {
+    font-size: 18px;
+    color: #ff0000;
+}
+
+.popup__title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #f1f1f1;
+}
+
+.popup__section {
+    margin-bottom: 10px;
+}
+
+.popup__section:last-child {
+    margin-bottom: 0;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    padding: 9px 14px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: inherit;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition:
+        background 0.15s ease,
+        opacity 0.15s ease;
+}
+
+.btn--primary {
+    background: #cc0000;
+    color: #fff;
+}
+
+.btn--primary:hover {
+    background: #ff0000;
+}
+
+.btn--primary:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.btn--secondary {
+    background: #272727;
+    color: #f1f1f1;
+}
+
+.btn--secondary:hover {
+    background: #3f3f3f;
+}
+
+.btn__icon {
+    font-size: 15px;
+    line-height: 1;
+}
+
+.status {
+    font-size: 12px;
+    min-height: 16px;
+    padding-left: 2px;
+}
+
+.status--success {
+    color: #4caf50;
+}
+.status--error {
+    color: #f44336;
+}
+.status--info {
+    color: #aaa;
+}
+
+.hidden {
+    display: none !important;
+}

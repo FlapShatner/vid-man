@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My Video List</title>
+        <link rel="stylesheet" href="list.css" />
+    </head>
+    <body>
+        <div class="page">
+            <header class="header">
+                <div class="header__inner">
+                    <div class="header__title">
+                        <span class="header__logo">&#9654;</span>
+                        <h1>Saved Videos</h1>
+                    </div>
+                    <div class="header__right">
+                        <span id="video-count" class="header__count"></span>
+                        <div
+                            class="view-toggle"
+                            role="group"
+                            aria-label="View mode"
+                        >
+                            <button
+                                id="btn-list-view"
+                                class="view-btn"
+                                title="List view"
+                            >
+                                &#9776; List
+                            </button>
+                            <button
+                                id="btn-grid-view"
+                                class="view-btn"
+                                title="Grid view"
+                            >
+                                &#8862; Grid
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="main">
+                <div id="empty-state" class="empty-state hidden">
+                    <p class="empty-state__icon">&#128250;</p>
+                    <p class="empty-state__text">No videos saved yet.</p>
+                    <p class="empty-state__sub">
+                        Browse YouTube and click
+                        <strong>+ Add to List</strong> on any thumbnail.
+                    </p>
+                </div>
+
+                <ul
+                    id="video-list"
+                    class="video-list"
+                    aria-label="Saved videos"
+                ></ul>
+            </main>
+        </div>
+        <script src="list.js"></script>
+    </body>
+</html>

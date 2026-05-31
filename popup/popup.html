@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Video List Manager</title>
+        <link rel="stylesheet" href="popup.css" />
+    </head>
+    <body>
+        <div class="popup">
+            <header class="popup__header">
+                <span class="popup__logo">&#9654;</span>
+                <h1 class="popup__title">Video Man</h1>
+            </header>
+
+            <div id="add-section" class="popup__section hidden">
+                <button id="add-btn" class="btn btn--primary">
+                    <span class="btn__icon">+</span> Add This Video
+                </button>
+                <p id="status-msg" class="status" aria-live="polite"></p>
+            </div>
+
+            <div class="popup__section">
+                <button id="open-list-btn" class="btn btn--secondary">
+                    <span class="btn__icon">&#9776;</span> Open Video List
+                </button>
+            </div>
+        </div>
+        <script src="popup.js"></script>
+    </body>
+</html>
